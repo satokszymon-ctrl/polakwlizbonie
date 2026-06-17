@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Praca w Lizbonie, szczerze od Polaka</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&subset=latin,latin-ext&display=swap" rel="stylesheet">
 <style>
   :root{
     --azulejo:#16407a;
@@ -19,7 +22,7 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    font-family:"Inter","Inter Fallback",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     background:var(--paper);color:var(--ink);line-height:1.55;
     -webkit-font-smoothing:antialiased;
   }
@@ -114,8 +117,13 @@
   button.cta:hover,a.cta:hover{background:#f1a350}
   button.cta:active,a.cta:active{transform:translateY(1px)}
   .finenote{font-size:12px;color:#94a8c8;margin-top:14px;line-height:1.5}
+  .askline{text-align:center;font-size:14px;color:#cdd9ec;margin-top:14px}
+  .askline a{color:var(--sun);font-weight:600;text-decoration:none}
+  .askline a:hover{text-decoration:underline}
 
   footer{padding:32px 0 56px;font-size:12px;color:var(--muted);text-align:center}
+  footer a{color:var(--azulejo-2);text-decoration:none}
+  footer a:hover{text-decoration:underline}
   @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
 </style>
 </head>
@@ -260,6 +268,7 @@
       <h2>Chcesz, żebym Cię polecił?</h2>
       <p class="sub">Zostaw CV i kontakt, a zgłoszę Cię w firmie. Zajmuje minutę.</p>
       <a class="cta" href="https://tally.so/r/lb4P25" target="_blank" rel="noopener">Wyślij CV i poproś o polecenie</a>
+      <p class="askline">Masz pytanie? Napisz: <a href="mailto:kontakt@polakwlizbonie.pl">kontakt@polakwlizbonie.pl</a></p>
       <p class="finenote">Twoje dane przekazuję wyłącznie do Teleperformance Portugal w celu rekrutacji, nigdzie indziej. Nie publikuję ich ani nie udostępniam osobom trzecim. Jeśli zmienisz zdanie, napisz na kontakt@polakwlizbonie.pl, a usunę Twoje zgłoszenie.</p>
     </div>
   </div>
@@ -267,7 +276,7 @@
 
 <footer>
   <div class="wrap">
-    Prywatna strona pracownika, nie jest oficjalną stroną firmy. Pytania? Napisz na adres, z którego dostałeś/aś link.
+    Prywatna strona pracownika, nie jest oficjalną stroną firmy. Pytania? <a href="mailto:kontakt@polakwlizbonie.pl">kontakt@polakwlizbonie.pl</a>
   </div>
 </footer>
 
