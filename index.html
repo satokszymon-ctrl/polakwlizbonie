@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praca w Lizbonie, szczerze od Polaka</title>
+<style>
+  :root{
+    --azulejo:#16407a;
+    --azulejo-2:#1d5bb0;
+    --paper:#f6f3ec;
+    --ink:#15202b;
+    --sun:#e8923a;
+    --sun-deep:#c9742a;
+    --line:#d8d2c4;
+    --muted:#5c6470;
+    --ok:#2f7d4f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 22px}
+
+  header.hero{
+    background:linear-gradient(180deg, rgba(22,64,122,0) 60%, rgba(22,64,122,.06) 100%), var(--azulejo);
+    color:var(--paper);padding:60px 0 52px;position:relative;overflow:hidden;
+  }
+  .hero .sun{
+    position:absolute;top:-90px;right:-60px;width:280px;height:280px;border-radius:50%;
+    background:radial-gradient(circle at 50% 50%, var(--sun) 0%, var(--sun-deep) 55%, rgba(201,116,42,0) 72%);
+    opacity:.55;filter:blur(2px);
+  }
+  .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--sun);font-weight:600;margin-bottom:18px}
+  .hero h1{font-size:clamp(29px,5.6vw,44px);line-height:1.09;font-weight:800;letter-spacing:-.02em;max-width:16ch}
+  .hero p.lede{margin-top:18px;font-size:17px;color:#cfdcef;max-width:48ch}
+  .hero .who{margin-top:24px;font-size:14px;color:#9fb4d4;border-left:2px solid var(--sun);padding-left:14px;max-width:50ch}
+
+  section{padding:42px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+  h2{font-size:23px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+  .sub{color:var(--muted);font-size:15px;margin-bottom:22px}
+  .note{font-size:13px;color:var(--muted);font-style:italic;margin-top:14px}
+
+  .grid{display:grid;gap:14px}
+  @media(min-width:560px){.grid.two{grid-template-columns:1fr 1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px 19px}
+  .card h3{font-size:16px;font-weight:700;margin-bottom:6px}
+  .card p{font-size:15px;color:#36404c}
+  .card ul{margin:6px 0 0 0;padding-left:18px}
+  .card li{font-size:15px;color:#36404c;margin-bottom:5px}
+
+  .fact{margin-top:16px;border-left:3px solid var(--sun);padding:2px 0 2px 16px}
+  .fact h4{font-size:15px;font-weight:700;margin-bottom:3px;color:var(--ink)}
+  .fact p{font-size:15px;color:#36404c}
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
+  .pill{font-size:13px;font-weight:600;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;color:var(--azulejo)}
+
+  .callout{display:flex;gap:11px;align-items:flex-start;background:rgba(232,146,58,.12);border:1px solid rgba(201,116,42,.35);border-radius:12px;padding:14px 16px;margin-top:16px;font-size:15px;color:#7a4a16}
+  .callout b{color:var(--sun-deep)}
+
+  .pay{display:flex;flex-wrap:wrap;gap:14px 32px;padding:18px 0 4px}
+  .pay .opt{flex:1 1 200px}
+  .pay .big{display:block;font-size:30px;font-weight:800;color:var(--azulejo);line-height:1.1}
+  .pay .opt small{display:block;font-size:13px;color:var(--muted);margin-top:4px}
+
+  .packlist{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+  .packlist ul{list-style:none;display:grid;gap:8px}
+  @media(min-width:560px){.packlist ul{grid-template-columns:1fr 1fr}}
+  .packlist li{font-size:14px;color:#36404c;display:flex;gap:9px;align-items:flex-start}
+  .packlist li span{color:var(--ok);font-weight:800;flex:0 0 auto}
+
+  .honest{display:grid;gap:10px}
+  .honest .row{display:flex;gap:12px;align-items:flex-start;font-size:15px}
+  .honest .row span.m{flex:0 0 auto;font-weight:800;width:18px;text-align:center}
+  .honest .row.good span.m{color:var(--ok)}
+  .honest .row.bad span.m{color:var(--sun-deep)}
+
+  .steps{display:grid;gap:11px}
+  .step{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .step .n{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--azulejo);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
+  .step p{font-size:15px;color:#36404c}
+  .step strong{color:var(--ink)}
+
+  .timeline{display:grid;gap:0;margin-top:6px}
+  .tl-item{position:relative;padding:0 0 22px 28px;border-left:2px solid var(--line)}
+  .tl-item:last-child{border-left-color:transparent;padding-bottom:0}
+  .tl-item::before{content:'';position:absolute;left:-9px;top:1px;width:15px;height:15px;border-radius:50%;background:var(--sun);box-shadow:0 0 0 3px var(--paper)}
+  .tl-item h4{font-size:15px;font-weight:700;margin-bottom:3px;color:var(--ink)}
+  .tl-item p{font-size:14px;color:#36404c}
+
+  .formwrap{background:var(--azulejo);color:var(--paper);border-radius:18px;padding:28px 24px}
+  .formwrap h2{color:#fff}
+  .formwrap .sub{color:#b9c8e0}
+  label{display:block;font-size:13px;font-weight:600;margin:15px 0 6px;color:#dbe4f2}
+  input[type=text],input[type=email],input[type=tel],input[type=url]{
+    width:100%;padding:12px 14px;border-radius:10px;border:1px solid #3a5e95;background:#0f2f5e;color:#fff;font-size:15px;font-family:inherit;
+  }
+  input[type=file]{
+    width:100%;padding:11px 14px;border-radius:10px;border:1px dashed #5a7cb0;background:#0f2f5e;color:#cdd9ec;font-size:14px;font-family:inherit;cursor:pointer;
+  }
+  input[type=file]::file-selector-button{
+    margin-right:12px;padding:8px 14px;border:none;border-radius:8px;background:var(--sun);color:#241405;font-weight:700;font-size:13px;cursor:pointer;
+  }
+  input::placeholder{color:#7d97bd}
+  input:focus{outline:2px solid var(--sun);outline-offset:1px;border-color:transparent}
+  .consent{display:flex;gap:11px;align-items:flex-start;margin:20px 0 6px;background:#0f2f5e;border:1px solid #3a5e95;border-radius:10px;padding:14px}
+  .consent input{margin-top:3px;flex:0 0 auto;width:18px;height:18px;accent-color:var(--sun)}
+  .consent label{margin:0;font-weight:400;font-size:13px;line-height:1.5;color:#cdd9ec}
+  button.cta,a.cta{display:block;width:100%;margin-top:18px;padding:15px;border:none;border-radius:10px;background:var(--sun);color:#241405;font-size:16px;font-weight:800;cursor:pointer;transition:background .15s ease,transform .05s ease;text-align:center;text-decoration:none;box-sizing:border-box}
+  button.cta:hover,a.cta:hover{background:#f1a350}
+  button.cta:active,a.cta:active{transform:translateY(1px)}
+  .finenote{font-size:12px;color:#94a8c8;margin-top:14px;line-height:1.5}
+
+  footer{padding:32px 0 56px;font-size:12px;color:var(--muted);text-align:center}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow">Lizbona, praca, relokacja</div>
+    <h1>Myślisz o przeprowadzce do słonecznej Portugalii? Powiem Ci, jak to wygląda naprawdę.</h1>
+    <p class="lede">Pracuję w Lizbonie w obsłudze klienta dla Teleperformance. Nie jestem rekruterem ani agencją. Sam tu przyjechałem i mogę polecić Cię do firmy, w której pracuję.</p>
+    <p class="who">Jeśli zostaniesz zatrudniony/a, dostaję za polecenie premię. Dzięki temu mam motywację, żeby pomóc Ci realnie, a nie wciskać Ci cokolwiek.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Co to za praca</h2>
+    <p class="sub">Teleperformance obsługuje wiele projektów dla dużych, znanych marek technologicznych: obsługa klienta, wsparcie techniczne, moderacja treści. Zadania, język i stawki zależą od projektu.</p>
+    <div class="grid two">
+      <div class="card">
+        <h3>Co realnie robisz</h3>
+        <ul>
+          <li>Pomagasz klientom przez e-mail, czat lub telefon</li>
+          <li>Rozwiązujesz zgłoszenia i tłumaczysz sprawy prostym językiem</li>
+          <li>Na części projektów wsparcie techniczne</li>
+          <li>Albo moderacja treści (ocena materiałów na platformach), częsty start dla młodych osób bez doświadczenia</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Czego potrzebujesz</h3>
+        <ul>
+          <li>Ukończone 18 lat i prawo do pracy w UE</li>
+          <li>Komunikatywny język docelowy (np. polski) plus angielski</li>
+          <li>Obsługa komputera i dobra komunikacja to plus</li>
+          <li>Na większość ról bez wymaganego doświadczenia czy studiów</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fact">
+      <h4>Język to Twój atut</h4>
+      <p>Polski wystarczy, żeby zacząć. Ale każdy dodatkowy język, jak niemiecki, francuski czy niderlandzki, daje więcej projektów do wyboru i wyższą stawkę. Im więcej języków znasz, tym lepiej.</p>
+    </div>
+
+    <div class="fact">
+      <h4>Tryb pracy</h4>
+      <p>Zależy od projektu. Główne biura Teleperformance w Portugalii są w Lizbonie i Porto.</p>
+      <div class="pill-row">
+        <span class="pill">Zdalnie</span>
+        <span class="pill">Hybrydowo</span>
+        <span class="pill">Stacjonarnie (Lizbona, Porto)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Relokacja i mieszkanie</h2>
+    <p class="sub">To jest sedno tego, dlaczego ta praca ma sens, gdy chcesz się przeprowadzić.</p>
+    <div class="grid two">
+      <div class="card">
+        <h3>Pomoc w relokacji</h3>
+        <p>Teleperformance pomaga w przeprowadzce i może zaoferować pokój w firmowym, umeblowanym mieszkaniu (kuchnia, salon, internet). Media pokrywa firma. Koszt pokoju jest potrącany z wypłaty, ale zwykle wychodzi taniej niż wynajem na własną rękę.</p>
+      </div>
+      <div class="card">
+        <h3>Albo własne mieszkanie</h3>
+        <p>Możesz zrezygnować z pokoju firmowego. Wtedy masz ok. 200 € więcej na rękę co miesiąc, ale szukasz lokum sam/a. Pokój firmowy to zwykle łatwiejszy start, gdy nie masz kontaktów w Portugalii.</p>
+      </div>
+    </div>
+    <div class="callout"><span>✈</span><div><b>Zwrot za lot:</b> firma zwraca koszt przelotu do Portugalii, zwykle po ok. 9 miesiącach pracy.</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Ile można zarobić</h2>
+    <p class="sub">Przykład dotyczy projektu polskiego. Niemiecki, francuski czy niderlandzki płacą wyraźnie więcej, więc każdy dodatkowy język podbija stawkę.</p>
+    <div class="pay">
+      <div class="opt"><span class="big">~900 €</span><small>na rękę / mies. z pokojem od firmy (pokój opłacony)</small></div>
+      <div class="opt"><span class="big">~1050 €</span><small>na rękę / mies. bez pokoju (mieszkanie na własną rękę)</small></div>
+    </div>
+    <p>Do tego dochodzi bonus za wyniki, powiązany z KPI. Na moim projekcie to ok. 300 € miesięcznie.</p>
+    <div class="packlist">
+      <ul>
+        <li><span>+</span>Ubezpieczenie zdrowotne od pierwszego dnia umowy</li>
+        <li><span>+</span>Karta na jedzenie (ok. 154 € / mies., nieopodatkowana)</li>
+        <li><span>+</span>Premie świąteczna i urlopowa</li>
+        <li><span>+</span>Urlop do 22 dni w roku</li>
+      </ul>
+    </div>
+    <p class="note">To orientacyjne kwoty na rękę. Zależą od projektu, języka i Twojej sytuacji podatkowej.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Umowa i ścieżka</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><p><strong>Szkolenie, zwykle ok. 4 tygodnie, po angielsku.</strong> Na start umowa wstępna. Uczysz się produktu i systemów.</p></div>
+      <div class="step"><div class="n">2</div><p><strong>Umowa na czas określony, zwykle ok. 12 miesięcy.</strong> Po szkoleniu i krótkim okresie próbnym.</p></div>
+      <div class="step"><div class="n">3</div><p><strong>Po ok. 2 latach umowa na stałe.</strong> Standardowa ścieżka, jeśli wszystko gra.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Szczerze: plusy i minusy</h2>
+    <div class="honest">
+      <div class="row good"><span class="m">+</span><div>Słońce, ocean i miasto, w którym chce się żyć.</div></div>
+      <div class="row good"><span class="m">+</span><div>Praca po polsku i angielsku, portugalski niepotrzebny na start.</div></div>
+      <div class="row good"><span class="m">+</span><div>Pomoc w relokacji i pokój na start, masz gdzie mieszkać od razu.</div></div>
+      <div class="row good"><span class="m">+</span><div>Pensja pozwala spokojnie żyć, podróżować po Portugalii i zbierać doświadczenie.</div></div>
+      <div class="row good"><span class="m">+</span><div>Doświadczenie w globalnej firmie i przy znanych markach tech, dobry wpis do CV.</div></div>
+      <div class="row bad"><span class="m">–</span><div>Część projektów ma grafik zmianowy (rotacyjny), choć nie wszystkie.</div></div>
+      <div class="row bad"><span class="m">–</span><div>To dobry start i trampolina, nie wymarzona kariera.</div></div>
+      <div class="row bad"><span class="m">–</span><div>Praca pod KPI i metrykami, bywa powtarzalna.</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Czego się spodziewać</h2>
+    <p class="sub">Tak wygląda droga od zostawienia CV do przyjazdu. Pierwszy krok robisz tutaj, u mnie.</p>
+    <div class="timeline">
+      <div class="tl-item"><h4>1. Prześlij CV tutaj</h4><p>Wgrywasz swoje CV i zostawiasz kontakt na tej stronie. To wszystko, co musisz zrobić na start.</p></div>
+      <div class="tl-item"><h4>2. Zgłaszam Cię w firmie</h4><p>Przekazuję Twoje CV przez wewnętrzny portal pracownika Teleperformance.</p></div>
+      <div class="tl-item"><h4>3. Firma się kontaktuje</h4><p>Rekruter odzywa się, opowiada o firmie i kolejnych krokach.</p></div>
+      <div class="tl-item"><h4>4. Krótkie testy online</h4><p>Sprawdzenie języka i podstawowych umiejętności.</p></div>
+      <div class="tl-item"><h4>5. Rozmowa telefoniczna</h4><p>Jeśli przejdziesz testy, rozmawiasz z rekruterem.</p></div>
+      <div class="tl-item"><h4>6. Oferta i relokacja</h4><p>Jeśli się uda, podpisujesz umowę i organizujesz przyjazd. Firma pomaga z lotem i mieszkaniem.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="formwrap">
+      <h2>Chcesz, żebym Cię polecił?</h2>
+      <p class="sub">Zostaw CV i kontakt, a zgłoszę Cię w firmie. Zajmuje minutę.</p>
+      <a class="cta" href="https://tally.so/r/lb4P25" target="_blank" rel="noopener">Wyślij CV i poproś o polecenie</a>
+      <p class="finenote">Twoje dane przekazuję wyłącznie do Teleperformance Portugal w celu rekrutacji, nigdzie indziej. Nie publikuję ich ani nie udostępniam osobom trzecim. Jeśli zmienisz zdanie, napisz na kontakt@polakwlizbonie.pl, a usunę Twoje zgłoszenie.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Prywatna strona pracownika, nie jest oficjalną stroną firmy. Pytania? Napisz na adres, z którego dostałeś/aś link.
+  </div>
+</footer>
+
+</body>
+</html>
