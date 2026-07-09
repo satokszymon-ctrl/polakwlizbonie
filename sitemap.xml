@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://polakwlizbonie.pl/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://polakwlizbonie.pl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polakwlizbonie.pl/en.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://polakwlizbonie.pl/ua.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polakwlizbonie.pl/"/>
+  </url>
+  <url>
+    <loc>https://polakwlizbonie.pl/en.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://polakwlizbonie.pl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polakwlizbonie.pl/en.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://polakwlizbonie.pl/ua.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polakwlizbonie.pl/"/>
+  </url>
+  <url>
+    <loc>https://polakwlizbonie.pl/ua.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://polakwlizbonie.pl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://polakwlizbonie.pl/en.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://polakwlizbonie.pl/ua.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://polakwlizbonie.pl/"/>
+  </url>
+</urlset>
