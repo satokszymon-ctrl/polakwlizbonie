@@ -11,6 +11,10 @@
 <meta name="author" content="Polak w Lizbonie">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://polakwlizbonie.pl/">
+<link rel="alternate" hreflang="pl" href="https://polakwlizbonie.pl/">
+<link rel="alternate" hreflang="en" href="https://polakwlizbonie.pl/en.html">
+<link rel="alternate" hreflang="uk" href="https://polakwlizbonie.pl/ua.html">
+<link rel="alternate" hreflang="x-default" href="https://polakwlizbonie.pl/">
 <meta name="theme-color" content="#16407a">
 
 <!-- Open Graph: link previews on Facebook, LinkedIn, WhatsApp, Messenger -->
@@ -64,6 +68,10 @@
     background:radial-gradient(circle at 50% 50%, var(--sun) 0%, var(--sun-deep) 55%, rgba(201,116,42,0) 72%);
     opacity:.55;filter:blur(2px);
   }
+  .lang{position:absolute;top:16px;right:18px;z-index:2;display:flex;gap:2px;background:rgba(15,47,94,.6);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:4px}
+  .lang a{font-size:12px;font-weight:700;letter-spacing:.05em;color:#cfdcef;text-decoration:none;padding:5px 11px;border-radius:999px;transition:color .15s ease}
+  .lang a:hover{color:#fff}
+  .lang a[aria-current=page]{background:var(--sun);color:#241405}
   .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--sun);font-weight:600;margin-bottom:18px}
   .hero h1{font-size:clamp(29px,5.6vw,44px);line-height:1.09;font-weight:800;letter-spacing:-.02em;max-width:16ch}
   .hero p.lede{margin-top:18px;font-size:17px;color:#cfdcef;max-width:48ch}
@@ -157,6 +165,11 @@
 <body>
 
 <header class="hero">
+  <nav class="lang" aria-label="Język strony">
+    <a href="/" aria-current="page">PL</a>
+    <a href="/en.html" lang="en" hreflang="en">EN</a>
+    <a href="/ua.html" lang="uk" hreflang="uk">UA</a>
+  </nav>
   <div class="sun" aria-hidden="true"></div>
   <div class="wrap">
     <div class="eyebrow">Lizbona, praca, relokacja</div>
@@ -184,7 +197,7 @@
         <h3>Czego potrzebujesz</h3>
         <ul>
           <li>Ukończone 18 lat i prawo do pracy w UE</li>
-          <li>Komunikatywny język docelowy (np. polski) plus angielski</li>
+          <li>Komunikatywny język docelowy (np. polski, ukraiński, włoski) plus angielski</li>
           <li>Obsługa komputera i dobra komunikacja to plus</li>
           <li>Na większość ról bez wymaganego doświadczenia czy studiów</li>
         </ul>
@@ -193,7 +206,7 @@
 
     <div class="fact">
       <h4>Język to Twój atut</h4>
-      <p>Polski wystarczy, żeby zacząć. Ale każdy dodatkowy język, jak niemiecki, francuski czy niderlandzki, daje więcej projektów do wyboru i wyższą stawkę. Im więcej języków znasz, tym lepiej.</p>
+      <p>Polski wystarczy, żeby zacząć. Firma szuka też osób z ukraińskim i włoskim. A każdy dodatkowy język, jak niemiecki, francuski czy niderlandzki, daje więcej projektów do wyboru i wyższą stawkę. Im więcej języków znasz, tym lepiej.</p>
     </div>
 
     <div class="fact">
