@@ -100,6 +100,11 @@
   .callout{display:flex;gap:11px;align-items:flex-start;background:rgba(232,146,58,.12);border:1px solid rgba(201,116,42,.35);border-radius:12px;padding:14px 16px;margin-top:16px;font-size:15px;color:#7a4a16}
   .callout b{color:var(--sun-deep)}
 
+  .sticky{position:relative;background:#fbf3c2;border:1px solid #e3d48a;border-radius:6px;padding:22px 18px 16px;margin-top:22px;box-shadow:2px 5px 14px rgba(21,32,43,.12);transform:rotate(-.5deg)}
+  .sticky::before{content:'';position:absolute;top:-11px;left:50%;width:96px;height:22px;transform:translateX(-50%) rotate(-2deg);background:rgba(232,146,58,.4);border:1px solid rgba(201,116,42,.25);border-radius:2px}
+  .sticky h4{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--sun-deep);margin-bottom:7px}
+  .sticky p{font-size:15px;color:#4a3c10;line-height:1.6}
+
   .pay{display:flex;flex-wrap:wrap;gap:14px 32px;padding:18px 0 4px}
   .pay .opt{flex:1 1 200px}
   .pay .big{display:block;font-size:30px;font-weight:800;color:var(--azulejo);line-height:1.1}
@@ -127,9 +132,15 @@
   .formwrap{background:var(--azulejo);color:var(--paper);border-radius:18px;padding:28px 24px}
   .formwrap h2{color:#fff}
   .formwrap .sub{color:#b9c8e0}
+  .optbox h3{font-size:16px;font-weight:800;color:#fff;margin-bottom:5px}
+  .optbox p{font-size:14px;color:#b9c8e0}
+  .or{display:flex;align-items:center;gap:14px;margin:24px 0;font-size:12px;font-weight:800;letter-spacing:.14em;color:#94a8c8}
+  .or::before,.or::after{content:'';flex:1;height:1px;background:#3a5e95}
   a.cta{display:block;width:100%;margin-top:18px;padding:15px;border:none;border-radius:10px;background:var(--sun);color:#241405;font-size:16px;font-weight:800;cursor:pointer;transition:background .15s ease,transform .05s ease;text-align:center;text-decoration:none;box-sizing:border-box}
   a.cta:hover{background:#f1a350}
   a.cta:active{transform:translateY(1px)}
+  a.cta.ghost{background:transparent;border:2px solid var(--sun);color:var(--sun);padding:13px}
+  a.cta.ghost:hover{background:rgba(232,146,58,.14)}
   .finenote{font-size:12px;color:#94a8c8;margin-top:14px;line-height:1.5}
   .askline{text-align:center;font-size:14px;color:#cdd9ec;margin-top:14px}
   .askline a{color:var(--sun);font-weight:600;text-decoration:none}
@@ -197,6 +208,10 @@
         <span class="pill">On-site (Lisbon, Porto)</span>
       </div>
     </div>
+    <div class="sticky">
+      <h4>From me</h4>
+      <p>I'm on a very chill project myself, I only handle emails. Phone support is definitely harder, but it's normal customer service / helpdesk. There are also content moderation projects: you check whether content follows the platform's rules, usually a very calm job.</p>
+    </div>
   </div>
 </section>
 
@@ -232,6 +247,10 @@
         <span class="pill">Performance bonus</span>
         <span class="pill">Extra language</span>
       </div>
+    </div>
+    <div class="fact">
+      <h4>Signing bonus and loyalty bonus</h4>
+      <p>Some projects also offer a signing bonus plus a loyalty bonus, together up to 3000 €. It depends on the project, the recruiter will give you the details at the meeting.</p>
     </div>
     <div class="fact">
       <h4>Benefits</h4>
@@ -285,6 +304,10 @@
       <div class="tl-item"><h4>5. Phone interview</h4><p>If you pass the tests, you talk to a recruiter.</p></div>
       <div class="tl-item"><h4>6. Offer and relocation</h4><p>If it works out, you sign the contract and organise the move. The company helps with the flight and housing.</p></div>
     </div>
+    <div class="sticky">
+      <h4>From me</h4>
+      <p>In practice: they call or email you to set up an info call. Use it to ask about currently available projects and bonuses, specifically the signing bonus and the loyalty bonus. Then there are 2 online tests, and finally a phone interview with a recruiter. All very doable :) Write to me if anything is unclear.</p>
+    </div>
   </div>
 </section>
 
@@ -292,10 +315,23 @@
   <div class="wrap">
     <div class="formwrap">
       <h2>Want me to refer you?</h2>
-      <p class="sub">Leave your CV and contact details, and I'll submit you at the company. It takes a minute. The form is in Polish, but you can fill it in with your details in English.</p>
-      <a class="cta" href="https://tally.so/r/lb4P25" target="_blank" rel="noopener">Send your CV and ask for a referral</a>
+      <p class="sub">There are two ways. Both count as my referral.</p>
+
+      <div class="optbox">
+        <h3>1. Apply yourself with my link</h3>
+        <p>You fill in the official Teleperformance form. My referral is already embedded in the link, so there's nothing else to do.</p>
+        <a class="cta" href="https://jobs.teleperformance.pt/recruitment/job-offer/?id=raf-lisbon&amp;src=RAF&amp;referrer=SZOK" target="_blank" rel="noopener">Apply on the company site</a>
+      </div>
+
+      <div class="or" aria-hidden="true">OR</div>
+
+      <div class="optbox">
+        <h3>2. Leave your CV with me</h3>
+        <p>I'll submit you through the internal employee portal and keep an eye on the process. The form is in Polish, but you can fill it in with your details in English.</p>
+        <a class="cta ghost" href="https://tally.so/r/lb4P25" target="_blank" rel="noopener">Send your CV and ask for a referral</a>
+      </div>
       <p class="askline">Have a question? Write to: <a href="mailto:kontakt@polakwlizbonie.pl">kontakt@polakwlizbonie.pl</a></p>
-      <p class="finenote">I pass your data only to Teleperformance Portugal, for recruitment purposes, and nowhere else. I never publish or share it with third parties. If you change your mind, write to kontakt@polakwlizbonie.pl and I'll delete your application.</p>
+      <p class="finenote">If you leave your CV with me, I pass your data only to Teleperformance Portugal, for recruitment purposes, and nowhere else. I never publish or share it with third parties. If you change your mind, write to kontakt@polakwlizbonie.pl and I'll delete your application.</p>
     </div>
   </div>
 </section>
