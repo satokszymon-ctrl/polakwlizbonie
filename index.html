@@ -100,6 +100,11 @@
   .callout{display:flex;gap:11px;align-items:flex-start;background:rgba(232,146,58,.12);border:1px solid rgba(201,116,42,.35);border-radius:12px;padding:14px 16px;margin-top:16px;font-size:15px;color:#7a4a16}
   .callout b{color:var(--sun-deep)}
 
+  .sticky{position:relative;background:#fbf3c2;border:1px solid #e3d48a;border-radius:6px;padding:22px 18px 16px;margin-top:22px;box-shadow:2px 5px 14px rgba(21,32,43,.12);transform:rotate(-.5deg)}
+  .sticky::before{content:'';position:absolute;top:-11px;left:50%;width:96px;height:22px;transform:translateX(-50%) rotate(-2deg);background:rgba(232,146,58,.4);border:1px solid rgba(201,116,42,.25);border-radius:2px}
+  .sticky h4{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--sun-deep);margin-bottom:7px}
+  .sticky p{font-size:15px;color:#4a3c10;line-height:1.6}
+
   .pay{display:flex;flex-wrap:wrap;gap:14px 32px;padding:18px 0 4px}
   .pay .opt{flex:1 1 200px}
   .pay .big{display:block;font-size:30px;font-weight:800;color:var(--azulejo);line-height:1.1}
@@ -133,6 +138,10 @@
   .formwrap{background:var(--azulejo);color:var(--paper);border-radius:18px;padding:28px 24px}
   .formwrap h2{color:#fff}
   .formwrap .sub{color:#b9c8e0}
+  .optbox h3{font-size:16px;font-weight:800;color:#fff;margin-bottom:5px}
+  .optbox p{font-size:14px;color:#b9c8e0}
+  .or{display:flex;align-items:center;gap:14px;margin:24px 0;font-size:12px;font-weight:800;letter-spacing:.14em;color:#94a8c8}
+  .or::before,.or::after{content:'';flex:1;height:1px;background:#3a5e95}
   label{display:block;font-size:13px;font-weight:600;margin:15px 0 6px;color:#dbe4f2}
   input[type=text],input[type=email],input[type=tel],input[type=url]{
     width:100%;padding:12px 14px;border-radius:10px;border:1px solid #3a5e95;background:#0f2f5e;color:#fff;font-size:15px;font-family:inherit;
@@ -151,6 +160,8 @@
   button.cta,a.cta{display:block;width:100%;margin-top:18px;padding:15px;border:none;border-radius:10px;background:var(--sun);color:#241405;font-size:16px;font-weight:800;cursor:pointer;transition:background .15s ease,transform .05s ease;text-align:center;text-decoration:none;box-sizing:border-box}
   button.cta:hover,a.cta:hover{background:#f1a350}
   button.cta:active,a.cta:active{transform:translateY(1px)}
+  a.cta.ghost{background:transparent;border:2px solid var(--sun);color:var(--sun);padding:13px}
+  a.cta.ghost:hover{background:rgba(232,146,58,.14)}
   .finenote{font-size:12px;color:#94a8c8;margin-top:14px;line-height:1.5}
   .askline{text-align:center;font-size:14px;color:#cdd9ec;margin-top:14px}
   .askline a{color:var(--sun);font-weight:600;text-decoration:none}
@@ -218,6 +229,10 @@
         <span class="pill">Stacjonarnie (Lizbona, Porto)</span>
       </div>
     </div>
+    <div class="sticky">
+      <h4>Ode mnie</h4>
+      <p>Ja jestem na bardzo chillowym projekcie, obsługuję tylko maile. Na telefonie jest na pewno ciężej, ale to normalny customer service / helpdesk. Są też projekty z moderacją treści: sprawdzasz, czy content jest zgodny z zasadami platformy, zwykle bardzo spokojna robota.</p>
+    </div>
   </div>
 </section>
 
@@ -253,6 +268,10 @@
         <span class="pill">Bonus za wyniki</span>
         <span class="pill">Dodatkowy język</span>
       </div>
+    </div>
+    <div class="fact">
+      <h4>Bonus na start i bonus lojalnościowy</h4>
+      <p>Na niektórych projektach jest dodatkowo bonus na start plus bonus lojalnościowy, razem nawet do 3000 €. Zależy to od konkretnego projektu, rekruter powie Ci dokładnie na spotkaniu.</p>
     </div>
     <div class="fact">
       <h4>Benefity</h4>
@@ -306,6 +325,10 @@
       <div class="tl-item"><h4>5. Rozmowa telefoniczna</h4><p>Jeśli przejdziesz testy, rozmawiasz z rekruterem.</p></div>
       <div class="tl-item"><h4>6. Oferta i relokacja</h4><p>Jeśli się uda, podpisujesz umowę i organizujesz przyjazd. Firma pomaga z lotem i mieszkaniem.</p></div>
     </div>
+    <div class="sticky">
+      <h4>Ode mnie</h4>
+      <p>W praktyce: dzwonią albo piszą maila, żeby umówić rozmowę informacyjną. Na niej dopytaj o aktualnie dostępne projekty i bonusy, konkretnie o signing bonus i loyalty bonus. Potem są 2 testy online, a na końcu rozmowa telefoniczna z rekruterem. Wszystko do przejścia :) Napisz do mnie, jeśli coś jest niejasne.</p>
+    </div>
   </div>
 </section>
 
@@ -313,10 +336,23 @@
   <div class="wrap">
     <div class="formwrap">
       <h2>Chcesz, żebym Cię polecił?</h2>
-      <p class="sub">Zostaw CV i kontakt, a zgłoszę Cię w firmie. Zajmuje minutę.</p>
-      <a class="cta" href="https://tally.so/r/lb4P25" target="_blank" rel="noopener">Wyślij CV i poproś o polecenie</a>
+      <p class="sub">Masz dwie drogi. Obie liczą się jako moje polecenie.</p>
+
+      <div class="optbox">
+        <h3>1. Aplikuj samodzielnie z mojego linku</h3>
+        <p>Wypełniasz oficjalny formularz Teleperformance. Link ma już wpisane moje polecenie, więc nic więcej nie musisz robić.</p>
+        <a class="cta" href="https://jobs.teleperformance.pt/recruitment/job-offer/?id=raf-lisbon&amp;src=RAF&amp;referrer=SZOK" target="_blank" rel="noopener">Aplikuj na stronie firmy</a>
+      </div>
+
+      <div class="or" aria-hidden="true">ALBO</div>
+
+      <div class="optbox">
+        <h3>2. Zostaw CV u mnie</h3>
+        <p>Zgłoszę Cię przez wewnętrzny portal pracownika i mam Cię na oku w procesie. Zajmuje minutę.</p>
+        <a class="cta ghost" href="https://tally.so/r/lb4P25" target="_blank" rel="noopener">Wyślij CV i poproś o polecenie</a>
+      </div>
       <p class="askline">Masz pytanie? Napisz: <a href="mailto:kontakt@polakwlizbonie.pl">kontakt@polakwlizbonie.pl</a></p>
-      <p class="finenote">Twoje dane przekazuję wyłącznie do Teleperformance Portugal w celu rekrutacji, nigdzie indziej. Nie publikuję ich ani nie udostępniam osobom trzecim. Jeśli zmienisz zdanie, napisz na kontakt@polakwlizbonie.pl, a usunę Twoje zgłoszenie.</p>
+      <p class="finenote">Jeśli zostawisz CV u mnie, Twoje dane przekazuję wyłącznie do Teleperformance Portugal w celu rekrutacji, nigdzie indziej. Nie publikuję ich ani nie udostępniam osobom trzecim. Jeśli zmienisz zdanie, napisz na kontakt@polakwlizbonie.pl, a usunę Twoje zgłoszenie.</p>
     </div>
   </div>
 </section>
