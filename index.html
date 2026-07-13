@@ -14,8 +14,30 @@
 <link rel="alternate" hreflang="pl" href="https://polakwlizbonie.pl/">
 <link rel="alternate" hreflang="en" href="https://polakwlizbonie.pl/en/">
 <link rel="alternate" hreflang="uk" href="https://polakwlizbonie.pl/ua/">
+<link rel="alternate" hreflang="it" href="https://polakwlizbonie.pl/it/">
+<link rel="alternate" hreflang="fr" href="https://polakwlizbonie.pl/fr/">
+<link rel="alternate" hreflang="da" href="https://polakwlizbonie.pl/da/">
 <link rel="alternate" hreflang="x-default" href="https://polakwlizbonie.pl/">
 <meta name="theme-color" content="#16407a">
+
+<script>
+/* Auto-wybór języka: tylko na stronie głównej; wybór z przełącznika (localStorage) ma pierwszeństwo */
+(function(){
+  try{
+    if(/bot|crawl|spider|lighthouse/i.test(navigator.userAgent)) return;
+    var map = {pl:'/', en:'/en/', ua:'/ua/', uk:'/ua/', ru:'/ua/', it:'/it/', fr:'/fr/', da:'/da/'};
+    var saved = null;
+    try{ saved = localStorage.getItem('plw-lang'); }catch(e){}
+    var target;
+    if(saved && map[saved]){ target = map[saved]; }
+    else{
+      var code = ((navigator.languages && navigator.languages[0]) || navigator.language || '').slice(0,2).toLowerCase();
+      target = map[code] || '/en/';
+    }
+    if(target !== '/') location.replace(target);
+  }catch(e){}
+})();
+</script>
 
 <!-- Open Graph: link previews on Facebook, LinkedIn, WhatsApp, Messenger -->
 <meta property="og:type" content="website">
@@ -68,8 +90,10 @@
     background:radial-gradient(circle at 50% 50%, var(--sun) 0%, var(--sun-deep) 55%, rgba(201,116,42,0) 72%);
     opacity:.55;filter:blur(2px);
   }
-  .lang{position:absolute;top:16px;right:18px;z-index:2;display:flex;gap:2px;background:rgba(15,47,94,.6);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:4px}
-  .lang a{font-size:12px;font-weight:700;letter-spacing:.05em;color:#cfdcef;text-decoration:none;padding:5px 11px;border-radius:999px;transition:color .15s ease}
+  .lang{position:absolute;top:16px;right:18px;z-index:2;display:flex;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100vw - 36px);gap:2px;background:rgba(15,47,94,.6);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:4px}
+  .lang a{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;letter-spacing:.05em;color:#cfdcef;text-decoration:none;padding:5px 9px;border-radius:999px;transition:color .15s ease}
+  .lang a svg{width:15px;height:11px;border-radius:2px;flex:0 0 auto;box-shadow:0 0 0 1px rgba(255,255,255,.15)}
+  @media(max-width:480px){.lang a{gap:0;padding:6px 8px}.lang a span{display:none}}
   .lang a:hover{color:#fff}
   .lang a[aria-current=page]{background:var(--sun);color:#241405}
   .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--sun);font-weight:600;margin-bottom:18px}
@@ -142,6 +166,7 @@
   .optbox p{font-size:14px;color:#b9c8e0}
   .or{display:flex;align-items:center;gap:14px;margin:24px 0;font-size:12px;font-weight:800;letter-spacing:.14em;color:#94a8c8}
   .or::before,.or::after{content:'';flex:1;height:1px;background:#3a5e95}
+  .deadline{display:inline-block;background:rgba(232,146,58,.16);border:1px solid rgba(232,146,58,.45);color:#ffd9ae;font-size:13px;font-weight:600;border-radius:999px;padding:7px 14px;margin:-8px 0 22px}
   label{display:block;font-size:13px;font-weight:600;margin:15px 0 6px;color:#dbe4f2}
   input[type=text],input[type=email],input[type=tel],input[type=url]{
     width:100%;padding:12px 14px;border-radius:10px;border:1px solid #3a5e95;background:#0f2f5e;color:#fff;font-size:15px;font-family:inherit;
@@ -157,7 +182,7 @@
   .consent{display:flex;gap:11px;align-items:flex-start;margin:20px 0 6px;background:#0f2f5e;border:1px solid #3a5e95;border-radius:10px;padding:14px}
   .consent input{margin-top:3px;flex:0 0 auto;width:18px;height:18px;accent-color:var(--sun)}
   .consent label{margin:0;font-weight:400;font-size:13px;line-height:1.5;color:#cdd9ec}
-  button.cta,a.cta{display:block;width:100%;margin-top:18px;padding:15px;border:none;border-radius:10px;background:var(--sun);color:#241405;font-size:16px;font-weight:800;cursor:pointer;transition:background .15s ease,transform .05s ease;text-align:center;text-decoration:none;box-sizing:border-box}
+  button.cta,a.cta{display:block;width:100%;margin-top:18px;padding:15px;border:none;border-radius:10px;background:var(--sun);color:#241405;font-size:16px;font-weight:800;font-family:inherit;cursor:pointer;transition:background .15s ease,transform .05s ease;text-align:center;text-decoration:none;box-sizing:border-box}
   button.cta:hover,a.cta:hover{background:#f1a350}
   button.cta:active,a.cta:active{transform:translateY(1px)}
   a.cta.ghost{background:transparent;border:2px solid var(--sun);color:var(--sun);padding:13px}
@@ -166,6 +191,18 @@
   .askline{text-align:center;font-size:14px;color:#cdd9ec;margin-top:14px}
   .askline a{color:var(--sun);font-weight:600;text-decoration:none}
   .askline a:hover{text-decoration:underline}
+
+  .applymodal{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:20px}
+  .applymodal[hidden]{display:none}
+  .applymodal-backdrop{position:absolute;inset:0;background:rgba(15,32,54,.55);backdrop-filter:blur(2px)}
+  .applymodal-box{position:relative;background:#fff;color:var(--ink);border-radius:16px;padding:26px 24px;max-width:380px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+  .applymodal-box h3{font-size:19px;font-weight:800;margin-bottom:6px;padding-right:26px}
+  .applymodal-sub{font-size:13px;color:var(--muted);margin-bottom:16px}
+  .applymodal-close{position:absolute;top:14px;right:14px;background:none;border:none;font-size:22px;line-height:1;color:var(--muted);cursor:pointer;padding:4px}
+  .applymodal-close:hover{color:var(--ink)}
+  .applymodal-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .applymodal-list a{display:block;text-align:center;padding:11px 8px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:14px;font-weight:700;text-decoration:none;transition:background .15s ease,border-color .15s ease}
+  .applymodal-list a:hover{background:#fff;border-color:var(--azulejo-2);color:var(--azulejo-2)}
 
   footer{padding:32px 0 56px;font-size:12px;color:var(--muted);text-align:center}
   footer a{color:var(--azulejo-2);text-decoration:none}
@@ -177,9 +214,12 @@
 
 <header class="hero">
   <nav class="lang" aria-label="Język strony">
-    <a href="/" aria-current="page">PL</a>
-    <a href="/en/" lang="en" hreflang="en">EN</a>
-    <a href="/ua/" lang="uk" hreflang="uk">UA</a>
+    <a href="/" aria-current="page"><svg viewBox="0 0 16 12" aria-hidden="true"><rect width="16" height="6" fill="#fff"/><rect y="6" width="16" height="6" fill="#DC143C"/></svg><span>PL</span></a>
+    <a href="/en/" lang="en" hreflang="en"><svg viewBox="0 0 16 12" aria-hidden="true"><rect width="16" height="12" fill="#012169"/><path d="M0 0l16 12M16 0L0 12" stroke="#fff" stroke-width="2.2"/><path d="M0 0l16 12M16 0L0 12" stroke="#C8102E" stroke-width=".9"/><path d="M8 0v12M0 6h16" stroke="#fff" stroke-width="3.6"/><path d="M8 0v12M0 6h16" stroke="#C8102E" stroke-width="2"/></svg><span>EN</span></a>
+    <a href="/ua/" lang="uk" hreflang="uk"><svg viewBox="0 0 16 12" aria-hidden="true"><rect width="16" height="6" fill="#005BBB"/><rect y="6" width="16" height="6" fill="#FFD500"/></svg><span>UA</span></a>
+    <a href="/it/" lang="it" hreflang="it"><svg viewBox="0 0 16 12" aria-hidden="true"><rect width="16" height="12" fill="#fff"/><rect width="5.4" height="12" fill="#009246"/><rect x="10.6" width="5.4" height="12" fill="#CE2B37"/></svg><span>IT</span></a>
+    <a href="/fr/" lang="fr" hreflang="fr"><svg viewBox="0 0 16 12" aria-hidden="true"><rect width="16" height="12" fill="#fff"/><rect width="5.4" height="12" fill="#002395"/><rect x="10.6" width="5.4" height="12" fill="#ED2939"/></svg><span>FR</span></a>
+    <a href="/da/" lang="da" hreflang="da"><svg viewBox="0 0 16 12" aria-hidden="true"><rect width="16" height="12" fill="#C8102E"/><path d="M6 0v12M0 6h16" stroke="#fff" stroke-width="2"/></svg><span>DA</span></a>
   </nav>
   <div class="sun" aria-hidden="true"></div>
   <div class="wrap">
@@ -230,7 +270,6 @@
       </div>
     </div>
     <div class="sticky">
-      <h4>Ode mnie</h4>
       <p>Ja jestem na bardzo chillowym projekcie, obsługuję tylko maile. Na telefonie jest na pewno ciężej, ale to normalny customer service / helpdesk. Są też projekty z moderacją treści: sprawdzasz, czy content jest zgodny z zasadami platformy, zwykle bardzo spokojna robota.</p>
     </div>
   </div>
@@ -326,7 +365,6 @@
       <div class="tl-item"><h4>6. Oferta i relokacja</h4><p>Jeśli się uda, podpisujesz umowę i organizujesz przyjazd. Firma pomaga z lotem i mieszkaniem.</p></div>
     </div>
     <div class="sticky">
-      <h4>Ode mnie</h4>
       <p>W praktyce: dzwonią albo piszą maila, żeby umówić rozmowę informacyjną. Na niej dopytaj o aktualnie dostępne projekty i bonusy, konkretnie o signing bonus i loyalty bonus. Potem są 2 testy online, a na końcu rozmowa telefoniczna z rekruterem. Wszystko do przejścia :) Napisz do mnie, jeśli coś jest niejasne.</p>
     </div>
   </div>
@@ -337,18 +375,20 @@
     <div class="formwrap">
       <h2>Chcesz, żebym Cię polecił?</h2>
       <p class="sub">Masz dwie drogi. Obie liczą się jako moje polecenie.</p>
+      <!-- Termin: zaktualizuj lub usuń, gdy się zmieni -->
+      <p class="deadline">⏳ Polecam aplikować jak najszybciej, najlepiej do końca lipca.</p>
 
       <div class="optbox">
         <h3>1. Aplikuj samodzielnie z mojego linku</h3>
-        <p>Wypełniasz oficjalny formularz Teleperformance. Link ma już wpisane moje polecenie, więc nic więcej nie musisz robić.</p>
-        <a class="cta" href="https://jobs.teleperformance.pt/recruitment/job-offer/?id=raf-lisbon&amp;src=RAF&amp;referrer=SZOK" target="_blank" rel="noopener">Aplikuj na stronie firmy</a>
+        <p>Wybierz język oferty i wypełnij oficjalny formularz Teleperformance. Polecenie działa automatycznie przez link, nic nie musisz dopisywać. CV musi być po angielsku, niezależnie od wybranego języka.</p>
+        <button type="button" class="cta" id="applyBtn" aria-haspopup="dialog">Aplikuj na stronie firmy</button>
       </div>
 
       <div class="or" aria-hidden="true">ALBO</div>
 
       <div class="optbox">
         <h3>2. Zostaw CV u mnie</h3>
-        <p>Zgłoszę Cię przez wewnętrzny portal pracownika i mam Cię na oku w procesie. Zajmuje minutę.</p>
+        <p>Zgłoszę Cię przez wewnętrzny portal pracownika Teleperformance.</p>
         <a class="cta ghost" href="https://tally.so/r/lb4P25" target="_blank" rel="noopener">Wyślij CV i poproś o polecenie</a>
       </div>
       <p class="askline">Masz pytanie? Napisz: <a href="mailto:kontakt@polakwlizbonie.pl">kontakt@polakwlizbonie.pl</a></p>
@@ -357,11 +397,53 @@
   </div>
 </section>
 
+<div class="applymodal" id="applyModal" hidden>
+  <div class="applymodal-backdrop" data-close></div>
+  <div class="applymodal-box" role="dialog" aria-modal="true" aria-labelledby="applyModalTitle">
+    <button type="button" class="applymodal-close" aria-label="Zamknij" data-close>&times;</button>
+    <h3 id="applyModalTitle">Wybierz język, na który chcesz aplikować</h3>
+    <p class="applymodal-sub">Przejdziesz na oficjalną stronę rekrutacyjną Teleperformance, w nowej karcie. CV musi być po angielsku, niezależnie od wybranego języka oferty.</p>
+    <div class="applymodal-list">
+      <a href="https://jobs.teleperformance.pt/recruitment/job-offer/?id=raf-lisbon&amp;src=RAF&amp;referrer=SZOK" target="_blank" rel="noopener">Polski</a>
+      <a href="https://jobs.teleperformance.pt/recruitment/job-offer/?id=raf-lisbon&amp;src=RAF&amp;referrer=SZOK" target="_blank" rel="noopener">Українська</a>
+      <a href="https://jobs.teleperformance.pt/recruitment/job-offer-it/?id=raf-lisbon&amp;src=RAF&amp;referrer=SZOK" target="_blank" rel="noopener">Italiano</a>
+      <a href="https://jobs.teleperformance.pt/recruitment/job-offer-nl/?id=raf-lisbon&amp;src=RAF&amp;referrer=SZOK" target="_blank" rel="noopener">Nederlands</a>
+      <a href="https://jobs.teleperformance.pt/recruitment/job-offer-de/?id=raf-lisbon&amp;src=RAF&amp;referrer=SZOK" target="_blank" rel="noopener">Deutsch</a>
+      <a href="https://jobs.teleperformance.pt/recruitment/job-offer-de/?id=raf-lisbon&amp;src=RAF&amp;referrer=SZOK" target="_blank" rel="noopener">Français</a>
+      <a href="https://jobs.teleperformance.pt/recruitment/job-offer/?id=raf-lisbon&amp;src=RAF&amp;referrer=SZOK" target="_blank" rel="noopener">Svenska</a>
+      <a href="https://jobs.teleperformance.pt/recruitment/job-offer/?id=raf-lisbon&amp;src=RAF&amp;referrer=SZOK" target="_blank" rel="noopener">Dansk</a>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="wrap">
     Prywatna strona pracownika, nie jest oficjalną stroną firmy. Pytania? <a href="mailto:kontakt@polakwlizbonie.pl">kontakt@polakwlizbonie.pl</a>
   </div>
 </footer>
+
+<script>
+(function(){
+  var btn = document.getElementById('applyBtn');
+  var modal = document.getElementById('applyModal');
+  if(!btn || !modal) return;
+  function openModal(){ modal.hidden = false; document.body.style.overflow = 'hidden'; }
+  function closeModal(){ modal.hidden = true; document.body.style.overflow = ''; }
+  btn.addEventListener('click', openModal);
+  modal.addEventListener('click', function(e){
+    if(e.target.hasAttribute('data-close')) closeModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && !modal.hidden) closeModal();
+  });
+  document.querySelectorAll('.lang a').forEach(function(a){
+    a.addEventListener('click', function(){
+      var code = {'/':'pl','/en/':'en','/ua/':'ua','/it/':'it','/fr/':'fr','/da/':'da'}[a.getAttribute('href')];
+      if(code){ try{ localStorage.setItem('plw-lang', code); }catch(e){} }
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
