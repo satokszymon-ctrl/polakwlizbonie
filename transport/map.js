@@ -1,5 +1,6 @@
-/* Mapa transportu w Lizbonie: linie metra, promy i koleje podmiejskie
-   na podkładzie OpenStreetMap. Współrzędne stacji są przybliżone. */
+/* Mapa transportu w Lizbonie: linie metra i przeprawy promowe
+   na podkładzie OpenStreetMap. Współrzędne stacji są przybliżone.
+   Koleje podmiejskie pokazuje sam podkład OpenStreetMap. */
 (function () {
   var el = document.getElementById('mapa-lizbona');
   if (!el || typeof L === 'undefined') return;
@@ -9,8 +10,7 @@
     amarela: '#d99a00',
     verde: '#2f8a56',
     vermelha: '#c94334',
-    prom: '#0f6f9e',
-    kolej: '#5d6b78'
+    prom: '#0f6f9e'
   };
 
   var metro = {
@@ -65,33 +65,8 @@
     }
   };
 
-  var koleje = [
-    { nazwa: 'Linha de Cascais', punkty: [
-      [38.7061, -9.1449], [38.7069, -9.1580], [38.7036, -9.1766], [38.6994, -9.1930],
-      [38.6970, -9.2033], [38.7010, -9.2210], [38.7043, -9.2330], [38.7020, -9.2478],
-      [38.6990, -9.2610], [38.6960, -9.2718], [38.6928, -9.2947], [38.6880, -9.3083],
-      [38.6856, -9.3175], [38.6812, -9.3340], [38.6845, -9.3450], [38.6893, -9.3548],
-      [38.6938, -9.3690], [38.6982, -9.3800], [38.7027, -9.3925], [38.7053, -9.3980],
-      [38.7030, -9.4090], [38.6997, -9.4200]
-    ]},
-    { nazwa: 'Linha de Sintra', punkty: [
-      [38.7143, -9.1395], [38.7280, -9.1673], [38.7390, -9.1840], [38.7503, -9.2010],
-      [38.7550, -9.2180], [38.7580, -9.2350], [38.7565, -9.2620], [38.7622, -9.2757],
-      [38.7627, -9.2873], [38.7690, -9.3010], [38.7740, -9.3180], [38.7788, -9.3345],
-      [38.7853, -9.3452], [38.7930, -9.3557], [38.7974, -9.3722], [38.7990, -9.3865]
-    ]},
-    { nazwa: 'Fertagus (przez most 25 Kwietnia)', punkty: [
-      [38.7420, -9.1340], [38.7470, -9.1470], [38.7420, -9.1680], [38.7280, -9.1673],
-      [38.7080, -9.1720], [38.6990, -9.1762], [38.6875, -9.1745], [38.6785, -9.1665],
-      [38.6650, -9.1560], [38.6455, -9.1455], [38.6280, -9.1230], [38.6180, -9.1075],
-      [38.5958, -9.0680]
-    ]},
-    { nazwa: 'Linha da Azambuja', punkty: [
-      [38.7139, -9.1225], [38.7280, -9.1120], [38.7395, -9.1041], [38.7550, -9.1010],
-      [38.7676, -9.0994], [38.7773, -9.0972], [38.7941, -9.0983], [38.8075, -9.0935],
-      [38.8382, -9.0846], [38.8580, -9.0700], [38.8963, -9.0353], [38.9280, -9.0060]
-    ]}
-  ];
+  /* Kolei podmiejskich nie rysujemy: tory są już na podkładzie OpenStreetMap
+     i tam są dokładne. Rysujemy tylko to, czego podkład nie pokazuje. */
 
   var promy = [
     { nazwa: 'Cais do Sodré → Cacilhas', punkty: [
@@ -123,13 +98,6 @@
   }).addTo(mapa);
 
   var wszystko = [];
-
-  // koleje podmiejskie pod spodem
-  koleje.forEach(function (k) {
-    L.polyline(k.punkty, {
-      color: KOLOR.kolej, weight: 3, opacity: .75, dashArray: '2 7', lineCap: 'round'
-    }).bindTooltip(k.nazwa, { sticky: true }).addTo(mapa);
-  });
 
   promy.forEach(function (p) {
     L.polyline(p.punkty, {
