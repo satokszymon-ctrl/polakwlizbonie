@@ -1,70 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://polakwlizbonie.pl/</loc>
-    <lastmod>2026-07-12</lastmod>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://polakwlizbonie.pl/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://polakwlizbonie.pl/en/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://polakwlizbonie.pl/ua/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://polakwlizbonie.pl/it/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://polakwlizbonie.pl/fr/"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://polakwlizbonie.pl/da/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://polakwlizbonie.pl/"/>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://polakwlizbonie.pl/en/</loc>
-    <lastmod>2026-07-12</lastmod>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://polakwlizbonie.pl/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://polakwlizbonie.pl/en/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://polakwlizbonie.pl/ua/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://polakwlizbonie.pl/it/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://polakwlizbonie.pl/fr/"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://polakwlizbonie.pl/da/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://polakwlizbonie.pl/"/>
+    <loc>https://polakwlizbonie.pl/formalnosci/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://polakwlizbonie.pl/ua/</loc>
-    <lastmod>2026-07-12</lastmod>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://polakwlizbonie.pl/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://polakwlizbonie.pl/en/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://polakwlizbonie.pl/ua/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://polakwlizbonie.pl/it/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://polakwlizbonie.pl/fr/"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://polakwlizbonie.pl/da/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://polakwlizbonie.pl/"/>
+    <loc>https://polakwlizbonie.pl/mieszkanie/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://polakwlizbonie.pl/it/</loc>
-    <lastmod>2026-07-12</lastmod>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://polakwlizbonie.pl/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://polakwlizbonie.pl/en/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://polakwlizbonie.pl/ua/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://polakwlizbonie.pl/it/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://polakwlizbonie.pl/fr/"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://polakwlizbonie.pl/da/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://polakwlizbonie.pl/"/>
+    <loc>https://polakwlizbonie.pl/praca/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://polakwlizbonie.pl/fr/</loc>
-    <lastmod>2026-07-12</lastmod>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://polakwlizbonie.pl/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://polakwlizbonie.pl/en/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://polakwlizbonie.pl/ua/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://polakwlizbonie.pl/it/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://polakwlizbonie.pl/fr/"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://polakwlizbonie.pl/da/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://polakwlizbonie.pl/"/>
+    <loc>https://polakwlizbonie.pl/transport/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://polakwlizbonie.pl/da/</loc>
-    <lastmod>2026-07-12</lastmod>
-    <xhtml:link rel="alternate" hreflang="pl" href="https://polakwlizbonie.pl/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://polakwlizbonie.pl/en/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://polakwlizbonie.pl/ua/"/>
-    <xhtml:link rel="alternate" hreflang="it" href="https://polakwlizbonie.pl/it/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://polakwlizbonie.pl/fr/"/>
-    <xhtml:link rel="alternate" hreflang="da" href="https://polakwlizbonie.pl/da/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://polakwlizbonie.pl/"/>
+    <loc>https://polakwlizbonie.pl/zakupy/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
+
+  <url>
+    <loc>https://polakwlizbonie.pl/kuchnia/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://polakwlizbonie.pl/codziennosc/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://polakwlizbonie.pl/spolecznosc/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

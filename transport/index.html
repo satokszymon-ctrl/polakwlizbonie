@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Transport w Lizbonie i Portugalii: Navegante, metro, promy | Polak w Lizbonie</title>
+<meta name="description" content="Jak działa transport w Portugalii. Karta Navegante i jej ceny, mapa metra, promów i kolei podmiejskich w Lizbonie, Andante w Porto, pociągi między miastami, Bolt i Uber.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://polakwlizbonie.pl/transport/">
+<meta name="theme-color" content="#16407a">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Polak w Lizbonie">
+<meta property="og:url" content="https://polakwlizbonie.pl/transport/">
+<meta property="og:title" content="Transport w Lizbonie i Portugalii: Navegante, metro, promy">
+<meta property="og:description" content="Karta Navegante, mapa metra i promów, pociągi, Bolt i Uber.">
+<meta property="og:image" content="https://polakwlizbonie.pl/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&subset=latin,latin-ext&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">Polak <span>w Lizbonie</span></a>
+    <button class="navtoggle" aria-expanded="false" aria-controls="mainnav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mainnav" id="mainnav" aria-label="Sekcje przewodnika">
+    <ul>
+      <li><a href="/formalnosci/">Formalności</a></li>
+      <li><a href="/mieszkanie/">Mieszkanie</a></li>
+      <li><a href="/praca/">Praca i pieniądze</a></li>
+      <li><a href="/transport/" aria-current="page">Transport</a></li>
+      <li><a href="/zakupy/">Zakupy</a></li>
+      <li><a href="/kuchnia/">Kuchnia</a></li>
+      <li><a href="/codziennosc/">Codzienność</a></li>
+      <li><a href="/spolecznosc/">Polska społeczność</a></li>
+    </ul>
+  </nav>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Transport</div>
+    <h1>Jak się poruszać po Lizbonie i po Portugalii</h1>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <div class="toc">
+    <h2>Na tej stronie</h2>
+    <ul>
+      <li><a href="#mapa">Mapa: metro, promy i koleje</a></li>
+      <li><a href="#navegante">Karta Navegante i ceny</a></li>
+      <li><a href="#karta">Jak wyrobić kartę imienną</a></li>
+      <li><a href="#kupno">Gdzie doładować i kiedy</a></li>
+      <li><a href="#metro">Metro i przesiadki</a></li>
+      <li><a href="#kolej">Koleje podmiejskie i promy</a></li>
+      <li><a href="#tramwaje">Tramwaje i autobusy</a></li>
+      <li><a href="#porto">Porto i karta Andante</a></li>
+      <li><a href="#miedzy-miastami">Między miastami</a></li>
+      <li><a href="#taksowki">Bolt, Uber i rowery</a></li>
+    </ul>
+  </div>
+
+  <section id="mapa">
+    <h2>Mapa: metro, promy i koleje</h2>
+    <p>Kluczem do orientacji w Lizbonie jest rzeka. Miasto leży na jej północnym brzegu, a wszystko, co jest po drugiej stronie, osiąga się promem, mostem albo pociągiem Fertagus.</p>
+
+    <figure>
+      <div id="mapa-lizbona" class="mapbox"></div>
+      <ul class="maplegend">
+        <li><i class="sw" style="background:#1d5bb0"></i>azul</li>
+        <li><i class="sw" style="background:#d99a00"></i>amarela</li>
+        <li><i class="sw" style="background:#2f8a56"></i>verde</li>
+        <li><i class="sw" style="background:#c94334"></i>vermelha</li>
+        <li><i class="ln-ferry"></i>prom</li>
+        <li><i class="ln-rail"></i>kolej podmiejska</li>
+      </ul>
+      <figcaption>Najedź na stację, żeby zobaczyć nazwę i przesiadki. Kółko myszy powiększa mapę po kliknięciu w nią. Położenie stacji jest przybliżone. Aktualne rozkłady i utrudnienia: <a href="https://www.metrolisboa.pt/" rel="noopener">metrolisboa.pt</a> i <a href="https://www.cp.pt/" rel="noopener">cp.pt</a>.</figcaption>
+    </figure>
+  </section>
+
+  <section id="navegante">
+    <h2>Karta Navegante i ceny</h2>
+    <p>Jedna karta, wszystkie środki transportu w obszarze metropolitalnym Lizbony: metro, autobusy Carris i Carris Metropolitana, tramwaje, pociągi CP i Fertagus oraz promy.</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Bilet</th><th>Zasięg</th><th class="num">Miesięcznie</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Navegante Municipal</td><td>Jedna gmina, np. sama Lizbona</td><td class="num">30 €</td></tr>
+          <tr><td>Navegante Metropolitano</td><td>Cały obszar metropolitalny</td><td class="num">40 €</td></tr>
+          <tr><td>Navegante +65</td><td>Powyżej 65 roku życia</td><td class="num">20 €</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Ceny nie zmieniły się w 2026 roku, siódmy rok z rzędu.</p>
+
+    <div class="callout">
+      <p><b>Który wybrać.</b> Mieszkasz i pracujesz w granicach Lizbony? Municipal wystarczy. Mieszkasz za rzeką, w Amadorze, Sintrze, Odivelas, Loures albo Cascais? Potrzebujesz Metropolitano. Różnica to dziesięć euro, więc przy wątpliwościach bierz Metropolitano.</p>
+    </div>
+
+    <div class="stamp">
+      <span><b>Ostatnia aktualizacja:</b> 27 lipca 2026</span>
+      <span><b>Źródła:</b> <a href="https://www.metrolisboa.pt/comprar/cartao-navegante-personalizado/" rel="noopener">Metro de Lisboa</a>, <a href="https://www.navegante.pt/faq" rel="noopener">navegante.pt</a></span>
+    </div>
+  </section>
+
+  <section id="karta">
+    <h2>Jak wyrobić kartę imienną</h2>
+    <p>Bilet miesięczny można mieć wyłącznie na <strong>karcie imiennej</strong> (navegante personalizado), ze zdjęciem i twoimi danymi. Karta na okaziciela (navegante ocasional) obsługuje tylko pojedyncze przejazdy i system zapping, czyli portmonetkę, z której schodzi opłata za każdy przejazd.</p>
+
+    <h3>Zwykły tryb</h3>
+    <p>Wniosek składasz online przez Portal VIVA, w przestrzeniach navegante Carris Metropolitana albo w dowolnym punkcie obsługi klienta przewoźnika. Potem czekasz. <strong>W praktyce zwykle około dwóch tygodni.</strong></p>
+
+    <h3>Tryb pilny</h3>
+    <p>Za dopłatą można dostać kartę <strong>w ciągu jednego dnia roboczego</strong>. Ta opcja jest dostępna tylko w wybranych punktach: na stacjach metra <strong>Alameda, Campo Grande, Jardim Zoológico i Marquês de Pombal</strong>, w dni robocze od 7:45 do 19:45.</p>
+
+    <div class="callout">
+      <p><b>Praktycznie.</b> Jeśli przyjeżdżasz i od razu dojeżdżasz do pracy, idź po kartę w trybie pilnym w pierwszych dniach. Dwa tygodnie na pojedynczych biletach kosztują więcej niż dopłata. Uwaga na kolejność: najpierw karta, dopiero potem bilet miesięczny, a jego zakup ma własne okno terminowe, opisane niżej.</p>
+    </div>
+
+    <div class="stamp">
+      <span><b>Ostatnia aktualizacja:</b> 27 lipca 2026</span>
+      <span><b>Źródło:</b> <a href="https://www.metrolisboa.pt/2024/08/29/emissao-de-cartao-navegante-personalizado-urgente/" rel="noopener">Metro de Lisboa, karta w trybie pilnym</a></span>
+    </div>
+  </section>
+
+  <section id="kupno">
+    <h2>Gdzie doładować i kiedy</h2>
+    <ul>
+      <li><strong>Punkty Payshop</strong>: zwykłe sklepy osiedlowe, papiernicze i kawiarnie z naklejką Payshop. W Lizbonie ponad 300, w aglomeracji ponad 600.</li>
+      <li><strong>Automaty w metrze</strong> oraz punkty obsługi przewoźników.</li>
+      <li><strong>Sklep internetowy navegante</strong> i aplikacja.</li>
+    </ul>
+
+    <div class="callout">
+      <p><b>Okno zakupowe, na którym przejeżdża się każdy nowy.</b> Bilet miesięczny kupuje się <strong>od 26 dnia miesiąca poprzedniego do 25 dnia bieżącego</strong>. Bilet obowiązuje w miesiącu kalendarzowym, a nie 30 dni od zakupu, więc kupowanie go 20 dnia miesiąca to wyrzucanie pieniędzy.</p>
+    </div>
+  </section>
+
+  <section id="metro">
+    <h2>Metro i przesiadki</h2>
+    <p>Cztery linie, nazywane kolorami. Nikt tu nie mówi "linia pierwsza", tylko "linha azul".</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Stacja przesiadkowa</th><th>Łączy</th></tr></thead>
+        <tbody>
+          <tr><td>Campo Grande</td><td><span class="ln amarela">amarela</span> i <span class="ln verde">verde</span></td></tr>
+          <tr><td>Saldanha</td><td><span class="ln amarela">amarela</span> i <span class="ln vermelha">vermelha</span></td></tr>
+          <tr><td>São Sebastião</td><td><span class="ln azul">azul</span> i <span class="ln vermelha">vermelha</span></td></tr>
+          <tr><td>Marquês de Pombal</td><td><span class="ln azul">azul</span> i <span class="ln amarela">amarela</span></td></tr>
+          <tr><td>Alameda</td><td><span class="ln verde">verde</span> i <span class="ln vermelha">vermelha</span></td></tr>
+          <tr><td>Baixa-Chiado</td><td><span class="ln azul">azul</span> i <span class="ln verde">verde</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul>
+      <li><span class="ln vermelha">vermelha</span> dowozi <strong>pod terminal lotniska</strong>.</li>
+      <li><span class="ln azul">azul</span> do centrum i na dworzec Santa Apolónia, skąd jadą pociągi na północ.</li>
+      <li><span class="ln verde">verde</span> do Cais do Sodré, czyli na pociąg do Cascais i na promy.</li>
+      <li><span class="ln amarela">amarela</span> z północy miasta do centrum.</li>
+    </ul>
+
+    <p>Metro nie jeździ całą noc. Ostatnie kursy odjeżdżają około pierwszej, więc wracając z wyjścia bierzesz nocny autobus albo Bolta.</p>
+  </section>
+
+  <section id="kolej">
+    <h2>Koleje podmiejskie i promy</h2>
+    <p>Część systemu, którą nowo przyjechani odkrywają najpóźniej, a która decyduje o tym, gdzie opłaca się mieszkać. Wszystko obsługuje Navegante Metropolitano.</p>
+
+    <ul>
+      <li><strong>Linha de Sintra</strong>: z Rossio albo Oriente do Sintry, przez Amadorę i Queluz. Najbardziej zatłoczona linia w kraju.</li>
+      <li><strong>Linha de Cascais</strong>: z Cais do Sodré wzdłuż wybrzeża, przez Belém, Oeiras i Carcavelos. Jedzie się cały czas nad wodą.</li>
+      <li><strong>Linha da Azambuja</strong>: na północny wschód, przez Sacavém i Vila Franca de Xira.</li>
+      <li><strong>Fertagus</strong>: jedyny pociąg przez most 25 Kwietnia, z Lizbony do Almady, Setúbal i okolic.</li>
+      <li><strong>Promy</strong>: Cais do Sodré do Cacilhas, Belém do Trafarii, Terreiro do Paço do Barreiro. Dla mieszkańców południowego brzegu to zwykły dojazd do pracy.</li>
+    </ul>
+
+    <div class="callout">
+      <p><b>Dlaczego to ma znaczenie dla portfela.</b> Mieszkanie w Almadzie, Barreiro albo przy linii do Sintry bywa znacznie tańsze, przy dojeździe 25 do 40 minut. Różnica stawki za metr między samą Lizboną a Półwyspem Setúbal to około 35 procent. Zobacz <a href="/mieszkanie/#ceny">tabelę cen</a>.</p>
+    </div>
+  </section>
+
+  <section id="tramwaje">
+    <h2>Tramwaje i autobusy</h2>
+    <p>Autobusy w mieście obsługuje Carris, poza granicami Lizbony Carris Metropolitana. Obie firmy są objęte kartą Navegante.</p>
+    <p><strong>Elétrico 28</strong> to nie środek transportu, tylko atrakcja turystyczna. Kolejki po czterdzieści minut, tłok i najintensywniej pracujący kieszonkowcy w mieście. Chcesz gdzieś dojechać, weź autobus. Chcesz się przejechać, wsiądź na pętli wcześnie rano.</p>
+    <p>Zabytkowe kolejki na wzgórza (Elevador da Bica, da Glória, do Lavra) są częścią sieci Carris. Do Elevador de Santa Justa kolejka jest tak absurdalna, że lepiej wejść schodami obok.</p>
+  </section>
+
+  <section id="porto">
+    <h2>Porto i karta Andante</h2>
+    <p>Ten sam pomysł co Navegante: jedna zbliżeniowa karta na metro, autobusy i pociągi podmiejskie w obszarze metropolitalnym Porto.</p>
+    <p>Różnica jest w naliczaniu. Andante działa <strong>strefowo</strong>: przy zakupie biletu miesięcznego wybierasz zestaw sąsiadujących stref, standardowo trzy, i w ich obrębie jeździsz bez ograniczeń. Ceny biletów okresowych nie zmieniły się w 2026 roku. Kartę kupisz w sklepach Andante, kasach CP, punktach Payshop i automatach metra.</p>
+    <div class="stamp">
+      <span><b>Ostatnia aktualizacja:</b> 27 lipca 2026</span>
+      <span><b>Źródło:</b> <a href="https://andante.pt/noticias/tarifario-andante-mantem-o-valor-dos-passes-em-2026/" rel="noopener">andante.pt</a></span>
+    </div>
+  </section>
+
+  <section id="miedzy-miastami">
+    <h2>Między miastami</h2>
+    <h3>Pociągi CP</h3>
+    <p>CP to Comboios de Portugal, narodowy przewoźnik kolejowy.</p>
+    <ul>
+      <li><strong>Alfa Pendular</strong>: najszybszy i najdroższy, na osi Lizbona, Coimbra, Porto, Braga oraz Faro. Wyłącznie z rezerwacją.</li>
+      <li><strong>Intercidades</strong>: wolniejszy o kilkadziesiąt minut i wyraźnie tańszy, te same trasy. Dla większości podróży najlepszy wybór.</li>
+      <li><strong>Regional</strong>: wolny, tani, bez rezerwacji, zatrzymuje się wszędzie.</li>
+    </ul>
+    <p>Bilety kupuj z wyprzedzeniem, bo ceny rosną wraz z zapełnianiem pociągu, a w piątki i niedziele popularne kursy się wyprzedają.</p>
+    <h3>Autobusy</h3>
+    <p>Rede Expressos dociera tam, gdzie nie ma kolei, a takich miejsc w głębi kraju jest sporo. Flixbus obsługuje główne trasy i bywa tańszy.</p>
+  </section>
+
+  <section id="taksowki">
+    <h2>Bolt, Uber i rowery</h2>
+    <p><strong>Bolt i Uber działają w całej Portugalii</strong> i są w codziennym użyciu. Czas oczekiwania to zwykle kilka minut, ceny wyraźnie niższe niż w Europie Zachodniej. Przy dwóch, trzech osobach potrafią wyjść taniej niż bilety. Działa też FREENOW, agregujący licencjonowane taksówki.</p>
+    <p>Bolt oferuje hulajnogi i rowery elektryczne w większych miastach. W Lizbonie działa dodatkowo miejski system <strong>GIRA</strong> z rowerami elektrycznymi, co przy tutejszych wzgórzach nie jest luksusem, tylko warunkiem koniecznym.</p>
+    <div class="callout">
+      <p><b>Z lotniska.</b> Aplikacje mają wyznaczone strefy odbioru i kierowca potrafi kazać iść na inny poziom parkingu. Metro linią <span class="ln vermelha">vermelha</span> dojeżdża pod sam terminal i zwykle jest szybsze niż stanie w korku na wyjeździe.</p>
+    </div>
+  </section>
+
+  <div class="pagenav">
+    <a href="/zakupy/"><small>Dalej</small><b>Zakupy: sklepy, mercados, polskie jedzenie</b></a>
+    <a href="/codziennosc/"><small>Dalej</small><b>Codzienność</b></a>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Polak w Lizbonie. Przewodnik po przeprowadzce do Portugalii dla obywateli Polski.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.querySelector('.navtoggle'),n=document.getElementById('mainnav');
+  if(!b||!n)return;
+  b.addEventListener('click',function(){
+    var open=n.classList.toggle('open');
+    b.setAttribute('aria-expanded',open?'true':'false');
+  });
+  document.addEventListener('click',function(e){
+    if(!n.classList.contains('open'))return;
+    if(n.contains(e.target)||b.contains(e.target))return;
+    n.classList.remove('open');b.setAttribute('aria-expanded','false');
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&n.classList.contains('open')){n.classList.remove('open');b.setAttribute('aria-expanded','false');b.focus();}
+  });
+})();
+</script>
+<script src="/vendor/leaflet/leaflet.js"></script>
+<script src="/transport/map.js"></script>
+<script data-goatcounter="https://polakwlizbonie.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
