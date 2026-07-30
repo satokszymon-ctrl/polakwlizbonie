@@ -121,6 +121,13 @@ strong{color:var(--ink)}
 .credits li{font-size:12.5px;color:var(--muted);margin-bottom:3px}
 .card p:last-child,.card ul:last-child{margin-bottom:0}
 
+/* karta wyróżniona, np. ścieżka wejścia na rynek pracy */
+.jobcard{background:#fff;border:1px solid #cfdaea;border-top:3px solid var(--azulejo-2);border-radius:12px;padding:18px 20px;margin:16px 0;box-shadow:0 1px 3px rgba(21,32,43,.05)}
+.jobcard p{margin-bottom:10px}
+.jobcard p:last-child{margin-bottom:0}
+.jobcard-cta{border-top:1px solid var(--line);padding-top:11px;margin-top:13px;font-size:15.5px;color:var(--muted)}
+.jobcard-cta a{font-weight:600}
+
 .callout{background:rgba(232,146,58,.11);border-left:3px solid var(--sun);border-radius:0 10px 10px 0;padding:13px 16px;margin:16px 0}
 .callout p,.callout li{color:#7a4a16;font-size:15.5px}
 .callout b,.callout strong{color:var(--sun-deep)}

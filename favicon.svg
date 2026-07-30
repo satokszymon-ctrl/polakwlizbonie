@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Polak w Lizbonie">
+  <rect width="64" height="64" rx="12" fill="#16407a"/>
+  <circle cx="44" cy="20" r="9" fill="#e8923a"/>
+  <path d="M6 44c6-5 11-5 17 0s11 5 17 0 11-5 17 0v14H6z" fill="#1d5bb0"/>
+  <path d="M6 50c6-5 11-5 17 0s11 5 17 0 11-5 17 0v10H6z" fill="#cfe0ea"/>
+</svg>
