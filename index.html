@@ -8,7 +8,7 @@
 <meta name="description" content="Przewodnik po przeprowadzce do Portugalii dla Polaków: formalności, mieszkanie, praca, transport, zakupy, kuchnia i codzienność. Liczby ze źródeł urzędowych.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://polakwlizbonie.pl/">
-<meta name="theme-color" content="#16407a">
+<meta name="theme-color" content="#463a2d">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
@@ -32,7 +32,7 @@
 {"@type":"Organization","@id":"https://polakwlizbonie.pl/#org","name":"Polak w Lizbonie","url":"https://polakwlizbonie.pl/","logo":"https://polakwlizbonie.pl/favicon.svg","email":"kontakt@polakwlizbonie.pl","areaServed":"PT"}
 ]}
 </script></head>
-<body class="landing">
+<body class="home">
 
 <div class="topbar">
   <div class="wrap">
@@ -56,13 +56,105 @@
   </nav>
 </div>
 
-<main class="cover">
-  <img src="/hero.jpg" alt="Wybrzeże Atlantyku pod Lizboną: klify, ocean i plaża" width="1600" height="1000">
-  <div class="wrap">
-    <h1>Portugalia bez zgadywania</h1>
-    <p>Przewodnik dla Polaków</p>
+<main>
+
+<section class="panel lead">
+  <img src="/hero.jpg" alt="Wybrzeże Atlantyku pod Lizboną: klify, ocean i plaża" width="1600" height="1000" fetchpriority="high">
+  <div class="pbody">
+    <span class="kicker">Przewodnik</span>
+    <h1 class="ptitle">Portugalia bez zgadywania</h1>
+    <p class="plede">Co załatwić po przyjeździe, ile to kosztuje i w jakiej kolejności. Osiem działów, od urzędów po codzienność.</p>
+    <a class="btn" href="#dzialy">Zacznij tutaj</a>
   </div>
+</section>
+
+<!-- Jeden dział = jeden kadr. Do czasu zdjęć kadry mają samo tło w kolorze, ustawione
+     w style.css. Zdjęcie wstawia się pierwszym dzieckiem panelu i przykrywa kolor:
+     <img src="/foto/praca.jpg" alt="" loading="lazy" decoding="async" width="1600" height="1000">
+     data-keywords nie jest renderowane, siedzi tam pod przyszłą wyszukiwarkę. -->
+<div class="stack" id="dzialy">
+
+  <a class="panel t-formalnosci" href="/formalnosci/" data-keywords="NIF, NISS, CRUE, numer utente, Finanças, Loja do Cidadão, rejestracja pobytu, konto w banku">
+    <span class="pbody">
+      <span class="kicker">Dział 01</span>
+      <span class="ptitle">Formalności</span>
+      <span class="pmeta"><span>Trzy numery: NIF, NISS, utente</span><span>Rejestracja pobytu i CRUE</span><span>Konto w banku, telefon, internet</span></span>
+    </span>
+    <span class="pnum">01 / 08</span>
+  </a>
+
+  <a class="panel t-mieszkanie" href="/mieszkanie/" data-keywords="wynajem, ceny najmu, kaucja, fiador, umowa najmu, odliczenie czynszu, oszustwa">
+    <span class="pbody">
+      <span class="kicker">Dział 02</span>
+      <span class="ptitle">Mieszkanie</span>
+      <span class="pmeta"><span>Realne stawki, region po regionie</span><span>Umowa, kaucja i fiador</span><span>Oszustwa przy wynajmie</span></span>
+    </span>
+    <span class="pnum">02 / 08</span>
+  </a>
+
+  <a class="panel t-praca" href="/praca/" data-keywords="płaca minimalna, czternaście pensji, subsídio de alimentação, IRS Jovem, recibos verdes, podatki, rezydencja podatkowa">
+    <span class="pbody">
+      <span class="kicker">Dział 03</span>
+      <span class="ptitle">Praca i pieniądze</span>
+      <span class="pmeta"><span>Płaca minimalna i czternaście pensji</span><span>Podatki, rezydencja, IRS Jovem</span><span>Umowy i samozatrudnienie</span></span>
+    </span>
+    <span class="pnum">03 / 08</span>
+  </a>
+
+  <a class="panel t-transport" href="/transport/" data-keywords="Navegante, metro, koleje podmiejskie, promy, Andante, bilety, Bolt, Uber">
+    <span class="pbody">
+      <span class="kicker">Dział 04</span>
+      <span class="ptitle">Transport</span>
+      <span class="pmeta"><span>Karta Navegante i ceny biletów</span><span>Mapa metra, kolei i promów</span><span>Między miastami, Porto</span></span>
+    </span>
+    <span class="pnum">04 / 08</span>
+  </a>
+
+  <a class="panel t-zakupy" href="/zakupy/" data-keywords="Continente, Pingo Doce, Lidl, Mercadona, mercados, lojas dos chineses, polskie jedzenie">
+    <span class="pbody">
+      <span class="kicker">Dział 05</span>
+      <span class="ptitle">Zakupy</span>
+      <span class="pmeta"><span>Sieci supermarketów i ceny</span><span>Hale targowe i sklepy specjalistyczne</span><span>Gdzie kupić polskie jedzenie</span></span>
+    </span>
+    <span class="pnum">05 / 08</span>
+  </a>
+
+  <a class="panel t-kuchnia" href="/kuchnia/" data-keywords="peixe grelhado, polvo, amêijoas, bacalhau, francesinha, couvert, pastel de nata, bica">
+    <span class="pbody">
+      <span class="kicker">Dział 06</span>
+      <span class="ptitle">Kuchnia</span>
+      <span class="pmeta"><span>Dziesięć dań i jak je zamówić</span><span>Couvert i zasady lokalu</span><span>Słodkie, kawa, piwo</span></span>
+    </span>
+    <span class="pnum">06 / 08</span>
+  </a>
+
+  <a class="panel t-codziennosc" href="/codziennosc/" data-keywords="SNS, centro de saúde, numer utente, prawo jazdy, IMT, szkoła, przedszkole, budżet miesięczny">
+    <span class="pbody">
+      <span class="kicker">Dział 07</span>
+      <span class="ptitle">Codzienność</span>
+      <span class="pmeta"><span>Służba zdrowia i lekarz</span><span>Prawo jazdy i samochód</span><span>Szkoła i budżet miesięczny</span></span>
+    </span>
+    <span class="pnum">07 / 08</span>
+  </a>
+
+  <a class="panel t-spolecznosc" href="/spolecznosc/" data-keywords="konsulat, ambasada, polska szkoła, stowarzyszenia, msze po polsku, grupy, Polacy w Portugalii">
+    <span class="pbody">
+      <span class="kicker">Dział 08</span>
+      <span class="ptitle">Polska społeczność</span>
+      <span class="pmeta"><span>Ambasada i konsulaty</span><span>Polska szkoła i stowarzyszenia</span><span>Gdzie szukać ludzi</span></span>
+    </span>
+    <span class="pnum">08 / 08</span>
+  </a>
+
+</div>
 </main>
+
+<footer>
+  <div class="wrap">
+    <p>Polak w Lizbonie. Przewodnik po przeprowadzce do Portugalii dla obywateli Polski.</p>
+    <p><a href="/kontakt/">Kontakt</a></p>
+  </div>
+</footer>
 
 <script>
 (function(){
@@ -80,6 +172,17 @@
   document.addEventListener('keydown',function(e){
     if(e.key==='Escape'&&n.classList.contains('open')){n.classList.remove('open');b.setAttribute('aria-expanded','false');b.focus();}
   });
+})();
+
+/* Pasek jest przezroczysty na pierwszym kadrze i dostaje tło dopiero, gdy kadr
+   zjedzie za jego wysokość. Obserwator zamiast nasłuchu scrolla, żeby nie liczyć
+   pozycji przy każdej klatce. */
+(function(){
+  var bar=document.querySelector('.topbar'),lead=document.querySelector('.panel.lead');
+  if(!bar||!lead||!('IntersectionObserver' in window))return;
+  new IntersectionObserver(function(e){
+    bar.classList.toggle('solid',!e[0].isIntersecting);
+  },{rootMargin:'-58px 0px 0px 0px'}).observe(lead);
 })();
 </script>
 <script data-goatcounter="https://polakwlizbonie.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
