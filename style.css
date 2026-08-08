@@ -18,6 +18,7 @@
   --terra-d:#9d4d2a;
   --line:#ddcfb6;
   --line-2:#ece1cd;
+  --night:#100e0b;
 
   --radius:18px;
   /* dwuwarstwowy cień zamiast twardej ramki: lżejsze i nowocześniejsze */
@@ -102,23 +103,29 @@ h1,h2,h3,.ptitle{text-wrap:balance}
 .mainnav a:hover{background:rgba(255,255,255,.07);color:#fff}
 .mainnav a[aria-current=page]{color:#d8b98a}
 
-/* ---------- strona główna: jeden dział = jeden kadr ---------- */
+/* ---------- strona główna: przewijanie całymi ekranami ---------- */
+/* Przewijaczem zostaje dokument, a nie osobny kontener: dzięki temu odnośnik
+   #dzialy, pasek górny i klawiatura działają tak jak wcześniej. Zaczepienia
+   ustawia się na <html>, bo to ono przewija dokument, stąd :has() zamiast .home.
+   scroll-padding odsuwa punkt zaczepienia o wysokość paska, żeby nie zasłaniał
+   pierwszego wiersza listy. */
+/* scroll-behavior:auto celowo: przy mandatory snap płynne przewijanie z :root
+   walczy z zaczepieniami i Chrome przerywa skok z #dzialy, wracając na górę.
+   Sam przeskok między ekranami i tak jest animowany przez mechanizm snapowania. */
+html:has(body.home){scroll-snap-type:y mandatory;scroll-padding-top:58px;scroll-behavior:auto}
+.panel.lead,.screen{scroll-snap-align:start}
+/* Ekran ma wysokość widoku pomniejszoną o pasek; stopka domyka go od dołu. */
+.screen{min-height:calc(100svh - 58px);display:flex;flex-direction:column}
+.screen > .index{flex:1 1 auto;min-height:0}
+
+/* ---------- strona główna: pierwszy ekran ---------- */
+/* svh, żeby pasek adresu w telefonie nie ucinał dołu kadru */
 .panel{
   position:relative;display:block;overflow:hidden;text-decoration:none;color:#fff;
-  min-height:clamp(300px,56vh,500px);
-}
-/* pierwszy kadr na cały ekran; svh, żeby pasek adresu w telefonie nie ucinał dołu */
-.panel.lead{min-height:100vh;min-height:100svh}
-.stack{scroll-margin-top:58px}
-/* Kadr działu bez zdjęcia stoi na samym kolorze. Zdjęcie wstawione jako <img>
-   przykrywa go w całości, więc podmiana nie wymaga ruszania tych reguł. */
-.stack .panel{
-  background-color:var(--tone,var(--bark));
-  background-image:radial-gradient(120% 82% at 76% 16%,rgba(255,255,255,.11),transparent 62%);
+  min-height:100vh;min-height:100svh;
 }
 .panel img{
   position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;
-  transition:transform .7s cubic-bezier(.2,.7,.3,1);
 }
 /* przyciemnienie góry i dołu: tekst musi być czytelny na dowolnym zdjęciu,
    także jasnym, bo zdjęcia będą podmieniane pojedynczo */
@@ -126,14 +133,10 @@ h1,h2,h3,.ptitle{text-wrap:balance}
   content:'';position:absolute;inset:0;z-index:1;
   background:linear-gradient(180deg,rgba(24,17,10,.5) 0%,rgba(24,17,10,.1) 34%,rgba(24,17,10,.86) 100%);
 }
-a.panel:hover img{transform:scale(1.045)}
 .pbody{
   position:absolute;z-index:2;left:50%;transform:translateX(-50%);
   bottom:clamp(26px,4.5vh,46px);width:100%;max-width:760px;padding:0 20px;
 }
-/* naprzemienne wyrównanie daje rytm przy przewijaniu stosu kadrów */
-.stack .panel:nth-child(even) .pbody{text-align:right}
-.stack .panel:nth-child(even) .pmeta{margin-left:auto}
 .kicker{
   display:block;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
   color:#e6c69c;margin-bottom:9px;
@@ -146,16 +149,6 @@ a.panel:hover img{transform:scale(1.045)}
   margin:13px 0 0;font-size:16px;color:rgba(255,255,255,.9);max-width:44ch;
   text-shadow:0 1px 14px rgba(12,7,2,.6);
 }
-.pmeta{
-  display:block;margin-top:12px;font-size:13.5px;line-height:1.5;
-  color:rgba(255,255,255,.85);max-width:52ch;text-shadow:0 1px 14px rgba(12,7,2,.7);
-}
-.pmeta span:not(:last-child)::after{content:' · ';color:rgba(255,255,255,.5)}
-.pnum{
-  position:absolute;z-index:2;top:clamp(16px,2.4vw,26px);right:clamp(16px,2.4vw,26px);
-  font-size:10.5px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.78);
-  font-variant-numeric:tabular-nums;
-}
 .btn{
   display:inline-flex;align-items:center;gap:9px;margin-top:20px;
   background:#fdf8ee;color:var(--bark);text-decoration:none;font-weight:700;font-size:15px;
@@ -165,14 +158,65 @@ a.panel:hover img{transform:scale(1.045)}
 .btn:hover{background:#fff;transform:translateY(-1px)}
 .btn::after{content:'↓';font-size:15px;opacity:.6}
 
-/* wejście kadrów: animowane jest translate, żeby nie zjadało transformu z :hover */
+/* wejście kadru: animowane jest translate, żeby nie zjadało transformu z .btn */
 @media (prefers-reduced-motion:no-preference){
   .panel{animation:rise .6s cubic-bezier(.2,.7,.3,1) both}
-  .stack .panel:nth-child(2){animation-delay:.05s}
-  .stack .panel:nth-child(3){animation-delay:.1s}
-  .stack .panel:nth-child(n+4){animation-delay:.15s}
 }
 @keyframes rise{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
+
+/* ---------- strona główna: drugi ekran, spis ośmiu działów ---------- */
+/* Osiem wierszy dzieli między siebie ekran, który zostaje po stopce,
+   więc po przeskoku w dół cała lista jest widoczna naraz.
+   subgrid: nazwy i słowa klucze stoją w jednej kolumnie we wszystkich wierszach. */
+.index{
+  display:grid;
+  grid-template-columns:auto max-content minmax(0,1fr) auto;
+  grid-auto-rows:minmax(0,1fr);
+  background:var(--paper);
+}
+.row{
+  grid-column:1/-1;display:grid;grid-template-columns:subgrid;align-items:center;
+  gap:0 clamp(14px,3.4vw,44px);
+  padding-inline:clamp(20px,5vw,56px);
+  border-top:1px solid var(--line);
+  text-decoration:none;color:var(--ink);
+  transition:background-color .18s ease,color .18s ease;
+}
+.row:last-child{border-bottom:1px solid var(--line)}
+.rnum{
+  font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--muted);
+  font-variant-numeric:tabular-nums;transition:color .18s ease;
+}
+.rtitle{font-size:clamp(20px,3.1vw,34px);font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.rkeys{font-size:clamp(12px,1.3vw,14px);line-height:1.45;color:var(--muted);transition:color .18s ease}
+.rkeys span:not(:last-child)::after{content:' · ';color:var(--line)}
+.rgo{
+  font-size:19px;color:var(--muted);opacity:0;translate:-8px 0;
+  transition:opacity .18s ease,translate .18s ease,color .18s ease;
+}
+/* najechany wiersz bierze kolor swojego działu, ten sam co nagłówek podstrony */
+:is(.row:hover,.row:focus-visible){background:var(--tone,var(--bark));color:#fdf8ee}
+:is(.row:hover,.row:focus-visible) :is(.rnum,.rkeys,.rgo){color:rgba(255,255,255,.82)}
+:is(.row:hover,.row:focus-visible) .rkeys span::after{color:rgba(255,255,255,.4)}
+:is(.row:hover,.row:focus-visible) .rgo{opacity:1;translate:0 0}
+
+/* bez subgrid kolumny nie zgrają się między wierszami, ale układ zostaje czytelny */
+@supports not (grid-template-columns:subgrid){
+  .index{display:flex;flex-direction:column}
+  .row{flex:1 1 0;display:flex;flex-wrap:wrap}
+}
+
+/* na wąskim ekranie nazwa i słowa klucze idą w dwie linie, numer schodzi z drogi */
+@media(max-width:679px){
+  .index{display:flex;flex-direction:column}
+  .row{
+    flex:1 1 0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:4px;
+    padding:8px clamp(18px,5vw,28px);
+  }
+  .rnum,.rgo{display:none}
+  .rtitle{font-size:clamp(19px,5.2vw,26px)}
+  .rkeys{font-size:12.5px}
+}
 
 /* ---------- nagłówek podstron ---------- */
 /* pasmo w kolorze działu, ten sam co na kadrze na stronie głównej;
@@ -352,18 +396,27 @@ figcaption{font-size:12.5px;color:var(--muted);margin-top:7px}
 .toc a{text-decoration:none;color:var(--body)}
 .toc a:hover{color:var(--terra-d);text-decoration:underline}
 
-/* stopka w kolorze działu: strona jest domknięta tym samym kolorem, którym się zaczyna.
-   Na stronie głównej bez zaokrągleń, bo leży wprost pod ciemnym kadrem. */
+/* wąski czarny pasek: domyka stronę, nie zabierając miejsca ekranowi nad nim */
 footer{
-  margin-top:40px;padding:32px 0 40px;text-align:center;
-  background-color:var(--tone,var(--bark));
-  background-image:linear-gradient(155deg,rgba(255,255,255,.1) 0%,rgba(255,255,255,0) 60%);
-  border-radius:26px 26px 0 0;color:rgba(255,255,255,.8);font-size:13px;
+  margin-top:40px;padding:15px 0 17px;text-align:center;
+  background:var(--night);border-radius:20px 20px 0 0;
+  color:rgba(255,255,255,.62);font-size:12.5px;
 }
 .home footer{margin-top:0;border-radius:0}
-footer p{font-size:13px;color:rgba(255,255,255,.8);max-width:58ch;margin:0 auto 8px}
-footer a{color:#f0dcbd;text-decoration:underline;text-underline-offset:3px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:2px 14px}
+footer p{font-size:12.5px;line-height:1.5;color:rgba(255,255,255,.62);margin:0}
+footer a{color:#e7cfa6;text-decoration:underline;text-underline-offset:3px}
 footer a:hover{color:#fff}
+
+/* Niski ekran (telefon w poziomie, okno przycięte w pionie): osiem wierszy nie
+   zmieści się czytelnie, więc lista wraca do naturalnej wysokości, a przeskoki
+   ekranami się wyłączają, żeby nie chowały treści poza zaczepieniami. */
+@media(max-height:520px){
+  html:has(body.home){scroll-snap-type:none;scroll-padding-top:0}
+  .screen{min-height:0}
+  .index{grid-auto-rows:auto}
+  .row{padding-block:11px}
+}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
